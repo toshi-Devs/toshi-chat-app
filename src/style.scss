@@ -1,3 +1,22 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 1025px) {
+        @content;
+    }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -117,6 +136,10 @@
         display: flex;
         overflow: hidden;
 
+        @include tablet {
+            width: 90%;
+        }
+
         .sidebar {
             flex: 1;
             background-color: #8da4f1;
@@ -134,6 +157,10 @@
                 .logo {
                     font-size: 20px;
                     font-weight: bold;
+
+                    @include tablet {
+                        display: none;
+                    }
                 }
                 
                 .user {
