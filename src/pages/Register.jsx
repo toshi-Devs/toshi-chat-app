@@ -8,7 +8,7 @@ import { Toaster, toast } from 'react-hot-toast'
 
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function Register() {
 
@@ -80,7 +80,7 @@ function Register() {
         </label>
         <button type="submit">Register</button>
       </form>
-       <p>Already have an account? Login</p>
+       <p>Already have an account? <NavLink to='/login' >Login </NavLink></p>
       </div>
     </div>
   )
